@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TP2
+namespace TpHeritage
 {
     public abstract class Forme
     {
