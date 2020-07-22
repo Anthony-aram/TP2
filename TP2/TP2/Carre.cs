@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TpHeritage
+namespace TP2
 {
     public class Carre : Rectangle
     {

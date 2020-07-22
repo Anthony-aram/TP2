@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TpHeritage
+namespace TP2
 {
     public class Program
     {

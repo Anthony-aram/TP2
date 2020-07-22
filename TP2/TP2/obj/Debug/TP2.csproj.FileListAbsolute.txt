@@ -1,0 +1,7 @@
+C:\Users\arama\source\repos\TP2\TP2\bin\Debug\TP2.exe.config
+C:\Users\arama\source\repos\TP2\TP2\bin\Debug\TP2.exe
+C:\Users\arama\source\repos\TP2\TP2\bin\Debug\TP2.pdb
+C:\Users\arama\source\repos\TP2\TP2\obj\Debug\TP2.csprojAssemblyReference.cache
+C:\Users\arama\source\repos\TP2\TP2\obj\Debug\TP2.csproj.CoreCompileInputs.cache
+C:\Users\arama\source\repos\TP2\TP2\obj\Debug\TP2.exe
+C:\Users\arama\source\repos\TP2\TP2\obj\Debug\TP2.pdb
