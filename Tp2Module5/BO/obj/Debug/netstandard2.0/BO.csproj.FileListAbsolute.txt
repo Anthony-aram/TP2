@@ -1,0 +1,9 @@
+C:\Users\arama\source\repos\Tp2Module5\BO\bin\Debug\netstandard2.0\BO.deps.json
+C:\Users\arama\source\repos\Tp2Module5\BO\bin\Debug\netstandard2.0\BO.dll
+C:\Users\arama\source\repos\Tp2Module5\BO\bin\Debug\netstandard2.0\BO.pdb
+C:\Users\arama\source\repos\Tp2Module5\BO\obj\Debug\netstandard2.0\BO.csprojAssemblyReference.cache
+C:\Users\arama\source\repos\Tp2Module5\BO\obj\Debug\netstandard2.0\BO.csproj.CoreCompileInputs.cache
+C:\Users\arama\source\repos\Tp2Module5\BO\obj\Debug\netstandard2.0\BO.AssemblyInfoInputs.cache
+C:\Users\arama\source\repos\Tp2Module5\BO\obj\Debug\netstandard2.0\BO.AssemblyInfo.cs
+C:\Users\arama\source\repos\Tp2Module5\BO\obj\Debug\netstandard2.0\BO.dll
+C:\Users\arama\source\repos\Tp2Module5\BO\obj\Debug\netstandard2.0\BO.pdb

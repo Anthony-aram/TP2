@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp2Module5", "Tp2Module5\Tp2Module5.csproj", "{E696CED1-E4EA-4AFC-9B80-78D4C10E9C33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp2Module5Bo", "..\..\..\Desktop\ASP20072020-master\TPModule5-2-BO\Tp2Module5Bo.csproj", "{6066EAAA-6025-49BC-A1F3-FC6447C42CD9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E696CED1-E4EA-4AFC-9B80-78D4C10E9C33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E696CED1-E4EA-4AFC-9B80-78D4C10E9C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E696CED1-E4EA-4AFC-9B80-78D4C10E9C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E696CED1-E4EA-4AFC-9B80-78D4C10E9C33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6066EAAA-6025-49BC-A1F3-FC6447C42CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6066EAAA-6025-49BC-A1F3-FC6447C42CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6066EAAA-6025-49BC-A1F3-FC6447C42CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6066EAAA-6025-49BC-A1F3-FC6447C42CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C31C5F8E-A8A5-49C2-911C-7728FABAF9C5}
+	EndGlobalSection
+EndGlobal
