@@ -22,7 +22,9 @@ namespace Tp2Module5.Controllers
         // GET: Pizza/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            PizzaCreateEditVM vm = new PizzaCreateEditVM();
+            vm.Pizza = pizzas.FirstOrDefault(x => x.Id == id);
+            return View(vm);
         }
 
         // GET: Pizza/Create
@@ -82,14 +84,6 @@ namespace Tp2Module5.Controllers
                     lesIngredients.Add(ingredient);
                 }
                 pizza.Ingredients = lesIngredients;
-                //for (int i = 0; i < PizzaController.pizzas.Count; i++)
-                //{
-                //    Pizza laPizza = PizzaController.pizzas[i];
-                //    if (laPizza.Id == vm.Pizza.Id)
-                //    {
-                //        PizzaController.pizzas[i] = vm.Pizza;
-                //    }
-                //}
                 return RedirectToAction("Index");
             }
             catch
@@ -101,15 +95,9 @@ namespace Tp2Module5.Controllers
         // GET: Pizza/Delete/5
         public ActionResult Delete(int id)
         {
-            Pizza laPizza = PizzaController.pizzas.FirstOrDefault(x => x.Id == id);
-            if (laPizza != null)
-            {
-                return View(laPizza);
-            }
-            else
-            {
-                return RedirectToAction("Index");
-            }
+            PizzaCreateEditVM vm = new PizzaCreateEditVM();
+            vm.Pizza = pizzas.FirstOrDefault(x => x.Id == id);
+            return View(vm);
 
         }
 
