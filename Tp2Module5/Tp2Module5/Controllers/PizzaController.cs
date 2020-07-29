@@ -42,15 +42,56 @@ namespace Tp2Module5.Controllers
         {
             try
             {
-                vm.Pizza.Pate = pates.FirstOrDefault(x => x.Id == vm.IdSelectedPate);
-                foreach (int ingredientId in vm.IdSelectedIngredients)
+                if (ModelState.IsValid)
                 {
-                    Ingredient ingredient = PizzaController.ingredients.FirstOrDefault(x => x.Id == ingredientId);
-                    vm.Pizza.Ingredients.Add(ingredient);
+                    // Une pizza doit toujours avoir une pâte
+                    if(vm.IdSelectedPate == null)
+                    {
+                        ModelState.AddModelError("", "Veuillez selectionner une pate !");
+                        return View(vm);
+                    }
+
+                    // Pas de pizzas avec le même nom
+                    if (pizzas.Any(p => p.Nom.ToUpper() == vm.Pizza.Nom.ToUpper()))
+                    {
+                        ModelState.AddModelError("", "Cette pizza existe déjà !");
+                        return View(vm);
+                    }
+                    // Une pizza doit avoir entre 2 et 5 ingrédients
+                    if (vm.IdSelectedIngredients.Count < 2 || vm.IdSelectedIngredients.Count > 5)
+                    {
+                        ModelState.AddModelError("", "Une pizza doit avoir entre 2 et 5 ingrédients !");
+                        return View(vm);
+                    }
+
+                    // Deux pizzas, ou plus, ne peuvent pas avoir la même liste d’ingrédients
+                    foreach (Pizza pizza in pizzas)
+                    {
+                        List<int> ingredients = new List<int>();
+                        foreach (Ingredient ingredient in pizza.Ingredients)
+                        {
+                            ingredients.Add(ingredient.Id);
+                        }
+
+                        if(Enumerable.SequenceEqual(ingredients, vm.IdSelectedIngredients))
+                        {
+                            ModelState.AddModelError("", "Deux pizzas, ou plus, ne peuvent pas avoir la même liste d’ingrédients !");
+                            return View(vm);
+                        }
+
+                    }
+
+                        vm.Pizza.Pate = pates.FirstOrDefault(x => x.Id == vm.IdSelectedPate);
+                    foreach (int ingredientId in vm.IdSelectedIngredients)
+                    {
+                        Ingredient ingredient = PizzaController.ingredients.FirstOrDefault(x => x.Id == ingredientId);
+                        vm.Pizza.Ingredients.Add(ingredient);
+                    }
+                    vm.Pizza.Id = PizzaController.pizzas.Count == 0 ? 1 : PizzaController.pizzas.Max(x => x.Id) + 1;
+                    PizzaController.pizzas.Add(vm.Pizza);
+                    return RedirectToAction("Index");
                 }
-                vm.Pizza.Id = PizzaController.pizzas.Count == 0 ? 1 : PizzaController.pizzas.Max(x => x.Id) + 1;
-                PizzaController.pizzas.Add(vm.Pizza);
-                return RedirectToAction("Index");
+                return View(vm);
             }
             catch
             {
@@ -74,17 +115,26 @@ namespace Tp2Module5.Controllers
         {
             try
             {
-                List<Ingredient> lesIngredients = new List<Ingredient>();
-                Pizza pizza = pizzas.FirstOrDefault(x => x.Id == vm.Pizza.Id);
-                pizza.Pate = pates.FirstOrDefault(x => x.Id == vm.IdSelectedPate);
-                pizza.Nom = vm.Pizza.Nom;
-                foreach (int ingredientId in vm.IdSelectedIngredients)
+                if (ModelState.IsValid)
                 {
-                    Ingredient ingredient = PizzaController.ingredients.FirstOrDefault(x => x.Id == ingredientId);
-                    lesIngredients.Add(ingredient);
+                    if (pizzas.Any(p => p.Nom.ToUpper() == vm.Pizza.Nom.ToUpper()))
+                    {
+                        ModelState.AddModelError("", "Cette pizza existe déjà !");
+                        return View(vm);
+                    }
+                    List<Ingredient> lesIngredients = new List<Ingredient>();
+                    Pizza pizza = pizzas.FirstOrDefault(x => x.Id == vm.Pizza.Id);
+                    pizza.Pate = pates.FirstOrDefault(x => x.Id == vm.IdSelectedPate);
+                    pizza.Nom = vm.Pizza.Nom;
+                    foreach (int ingredientId in vm.IdSelectedIngredients)
+                    {
+                        Ingredient ingredient = PizzaController.ingredients.FirstOrDefault(x => x.Id == ingredientId);
+                        lesIngredients.Add(ingredient);
+                    }
+                    pizza.Ingredients = lesIngredients;
+                    return RedirectToAction("Index");
                 }
-                pizza.Ingredients = lesIngredients;
-                return RedirectToAction("Index");
+                return View(vm);
             }
             catch
             {
